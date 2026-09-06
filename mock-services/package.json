@@ -1,0 +1,12 @@
+{
+  "name": "wf1-mock-services",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Downstream stand-ins for the resilient ingest pipeline: a deliberately flaky CRM, the dead-letter store, an audit log and an alert sink. Zero dependencies - uses node:http and node:sqlite.",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node server.js",
+    "reset": "node -e \"import('./db.js').then(m => { m.resetAll(); console.log('reset', m.stats()) })\""
+  }
+}
